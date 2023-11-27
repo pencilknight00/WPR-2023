@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>head</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        }
+        p{
+            width: 160px;
+            position: absolute;
+            right: 80px;
+            font-size: 20px;
+            font-weight: 100;
+            top: 17px;
+        }
+        #sign_out{
+        color: #4070f4;
+        text-decoration: none;
+        position: absolute; 
+        right: 20px;
+        text-align: right;
+        }
+        #sign_out:hover{
+            text-decoration: underline;
+        }
+    </style>
+</head> 
+<body>
+    <header>
+        <div>
+            <div><p><%= fullname %></p></div>
+            <a id="sign_out" href="/sign_out">Sign out</a>
+        </div>
+    </header>
+    <main>
+</main>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vmail</title> 
+    <link rel="stylesheet" type="text/css" href="/css/email_detail.css">
+
+    </head>
+<body>
+  <div class="wrapper">
+    <%- include('../common/header') %>
+    <div><h2>Vmail</h2></div>
+    <div id="allhave">
+      <div class="side_menu">
+        <div class = "pages" id ="inbox_link"><a href="/inbox">Inbox</a></div>
+        <div class = "pages" id ="outbox_link"><a href="/outbox">Outbox</a></div>
+        <div class = "pages" id ="compose_link"><a href="/compose">Compose</a></div>
+      </div>
+      <div id="mail">
+        <div id="subject">
+            <h3><%= subject %></h3>
+        </div>
+        <div id="s_r_r">
+            <div id="sender_name">From: <%= senderName %></div>
+            <div id="recipient_name">To: <%= recipientName %></div>
+            <div id="rec_time">received time: <%= received_time %></div>
+        </div>
+        <div id="body">
+            <%= body %>
+        </div>
+    </div>
+      
+    </div>
+  </div>
+</body>
+</html>

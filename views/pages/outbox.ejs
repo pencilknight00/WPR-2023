@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vmail outbox page</title> 
+    <link rel="stylesheet" type="text/css" href="/css/outbox.css">
+   </head>
+<body>
+  <div class="wrapper">
+    <%- include('../common/header') %>
+    <h2>Vmail</h2>
+    <div id="allhave">
+      <div class="side_menu">
+        <div class = "pages" id ="inbox_link"><a href="/inbox">Inbox</a></div>
+        <div class = "pages" id ="outbox_link"><a href="/outbox">Outbox</a></div>
+        <div class = "pages" id ="compose_link"><a href="/compose">Compose</a></div>
+
+      </div>
+      <div id="listOfOutbox">
+        <% outboxes.forEach((mail)=> { %>
+          <div class="mails">
+            <div class="checkBox">
+              <input type="checkbox">
+            </div>
+            <div id="n_s_t">
+            <div class="recipents_name">
+              <%= mail.recipient %>
+            </div>
+            <div class="subject">
+              <a href="email_detail/<%= mail.emailId %>"><%= mail.subject %></a>
+            </div>
+            <div class="rec_time">
+              <div id="time"><%= mail.received_time %></div>
+            </div>
+          </div>
+          </div>
+          <% }) %>
+          <div class="pagination">
+            <% if (currentPage > 1) { %>
+                <a href="/outbox?page=<%= currentPage - 1 %>">&laquo;</a>
+            <% } %>
+    
+            <% for (let i = 1; i <= totalPages; i++) { %>
+                <a href="/outbox?page=<%= i %>" class="<%= i === currentPage ? 'active' : '' %>">
+                    <%= i %>
+                </a>
+            <% } %>
+    
+            <% if (currentPage < totalPages) { %>
+                <a href="/outbox?page=<%= currentPage + 1 %>">&raquo;</a>
+            <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

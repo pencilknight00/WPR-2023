@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  min-height: 100vh;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  background: #4070f4;
+  padding: 30px;
+}
+.wrapper{
+  position: relative;
+  max-width: 1300px;
+  width: 100%;
+  min-height: 650px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.wrapper h2{
+  position: relative;
+  font-size: 30px;
+  font-weight: 600;
+  color: #333;
+  width: 100px;
+}
+.wrapper h2::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 20px;
+  border-radius: 12px;
+  background: #4070f4;
+}
+#inputs{
+  width: 700px;
+  height: 530px;
+  border: #333 solid;
+  border-radius: 6px;
+  padding: 20px;
+  display: flex;
+  gap: 50px;
+ 
+}
+
+.pages a{
+  color: #4070f4;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 10px;
+}
+.pages a:hover{
+  text-decoration: underline;
+}
+
+#compose_link{
+  background-color: #4070f4;
+  padding: 10px;
+  border-radius: 6px;
+}
+#compose_link a{
+  color: white;
+}
+#allhave{
+  position: relative;
+  top: 30px;
+  display: flex;
+  flex-direction: row ;
+  column-gap: 200px;
+}
+#sele_and_reci{
+  display: flex;
+  flex-direction: row;
+  column-gap: 60px;
+}
+#inputSubject{
+  align-self: flex-end;
+}
+#element_of_form{
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  column-gap: 60px;
+}
+#body{
+  height: 360px;
+  width: 600px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 6px;
+}
+#attach_sendbtn{
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+}
+#fileInput{
+  max-width: 700px;
+  width: 100%;
+}
+#send_btn{
+  border: none;
+  background-color: #4070f4;
+  color: white;
+  width: 70px;
+  height: 30px;
+  
+}
+#sendBtn{
+  align-self: flex-end;
+  margin-right: 0;
+}
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vmail compose page</title> 
+    <link rel="stylesheet" type="text/css" href="/css/compose.css">
+   </head>
+<body>
+  
+  <div class="wrapper">
+    <%- include('../common/header') %>
+
+    <h2>Vmail</h2>
+    <div id="allhave">
+      <div class="side_menu">
+        <div class = "pages" id ="inbox_link"><a href="/inbox">Inbox</a></div>
+        <div class = "pages" id ="outbox_link"><a href="/outbox">Outbox</a></div>
+        <div class = "pages" id ="compose_link"><a href="/compose">Compose</a></div>
+
+      </div>
+      <div id="inputs">
+      <form action="/compose" method="POST">
+        <div id="element_of_form">
+          <div id="sele_and_reci">
+            <div id="dropB">
+              <label for="recipient">Choose a recipent: </label>
+    
+              <select name="recipient" id="recipient">
+                <% users.forEach(user => { %>
+                    <option value="<%= user.id %>"><%= user.username %></option>
+                <% }); %>
+            </select>
+            </div>
+            <div id="inputSubject">
+              <label for="subject">Subject: </label>
+              <input type="text" name="subject" id="subject">
+            </div>
+          </div>
+      
+        <div id="inputDody">
+          <label id="bodyLabel" for="body">Body: </label>
+          <textarea type="text" name="body" id="body" cols="30" rows="10"></textarea>
+        </div>
+        <div id="attach_sendbtn">
+          <div id="fileInput">
+            <label for="attachment">Attachment:</label>
+            <input type="file" name="attachment" id="attachment">
+          </div>
+          <div id="sendBtn">
+            <input type="submit" name="send_btn" id="send_btn" value="Send">
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+    </div>
+  </div>
+</body>
+</html>
